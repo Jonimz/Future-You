@@ -17,6 +17,14 @@ body {
   font-weight: normal;
   color: white;
 }
+.subtitle {
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+  font-family: "Helvetica";
+  font-weight: normal;
+  color: rgb(109, 35, 35);
+}
 
 #card-container {
   display: flex;
