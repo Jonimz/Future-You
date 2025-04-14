@@ -31,11 +31,70 @@ const EAST_LOS_HIGH_POSTER_URL =
   "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
 // This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
-];
+let careers = [
+  {
+    title: "Author",
+    description: "Writes books and articles.",
+    image: "https://example.com/author.jpg",
+    goals: [
+      "Write a bestselling novel",
+      "Publish articles in top magazines",
+      "Attend book signings and events",
+    ],
+    quotes: [
+      "your story is your power",
+    {
+      title: "Software Engineer",
+      description: "Develops software applications.",
+      image: "https://example.com/software_engineer.jpg",
+      goals: [
+        "Build a successful app",
+        "Contribute to open-source projects",
+        "Work on innovative technology",
+      ],
+      quotes: [
+        "Imagine you at silicon valley",
+        "code like you could be the next Steve Jobs",
+      {
+      title: "Recruiter",
+    description: "Helps companies find the right talent.",
+    image: "https://example.com/recruiter.jpg",
+    goals: [
+      "Match candidates with job opportunities",
+      "Build a strong professional network",
+      "Develop effective recruitment strategies",
+    ],
+    quotes: ["You are the bridge between talent and opportunity"],
+  },
+  {
+    title: "Content Creator",
+    description: "Creates engaging content for various platforms.",
+    image: "https://example.com/content_creator.jpg",
+    goals: [
+      "Grow a loyal audience",
+      "Collaborate with brands",
+      "Produce high-quality content",
+    ],
+    quotes: [
+      "Your creativity is your currency",
+      "Create content that resonates with your audience",
+    ],
+
+  },
+  { 
+    title: "stay-at-home parent",
+    description: "Manages household and family responsibilities.",
+    image: "https://example.com/stay_at_home_parent.jpg",
+    goals: [
+      "Provide a nurturing environment for children",
+      "Balance household tasks and family time",
+      "Support children's education and development",
+    ],
+    quotes: [
+      "To be a stay-at-home parent is to be a superhero in disguise",
+    ],
+  }
+
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
 
