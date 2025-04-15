@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Future You|Home</title>
+  <title>Future You</title>
     <meta name="description" content="A Catalog showcasing your future self: goals, dreams and inspiration." />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
@@ -14,22 +14,29 @@
       <input
         type="text"
         id="search-bar"
-        placeholder="Search for a career..."
+        placeholder="What's your dream job..."
         />
         <button on click="searchCareer();">Search</button>
-     </header>
+     
+      </header>
     <div id="card-container"></div>
     <div class="card" style="display: none">
-      <div class="card-content">
+      <h2 class ="card-title">Career Title</h2>
+      <img class="card-image" src="" alt="Career Image"/>
+      <p class="card-description"></p>
+    <ul class = "card-goals">
+        
+    </ul>
+    <p class="card-quote"></p>
+   
         <h2>Career Title</h2>
         <img src="" alt="Career Image" />
         <ul>
-          <li>Bullet Point 1</li>
           <li>Bullet Point 2</li>
           <li>Bullet Point 3</li>
         </ul>
       </div>
-    </div>
+    </div> 
     <div class="footer">
       <button onclick="quoteAlert();">Click Me!</button>
       <button onclick="removeLastCard();">Remove A Card!</button>
