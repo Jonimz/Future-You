@@ -23,47 +23,29 @@
  *
  */
 
-// const FRESH_PRINCE_URL =
-//   "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-// const CURB_POSTER_URL =
-//   "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-// const EAST_LOS_HIGH_POSTER_URL =
-//   "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
 // This is an array of strings (career titles)
-let careers =[
+let careers = [
   {
     title: "Author",
     description: "Writes books and articles.",
-    image: "https://example.com/author.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Author_pencil.svg",
     goals: [
       "Write a bestselling novel",
       "Publish articles in top magazines",
       "Attend book signings and events",
     ],
-    quotes: ["your story is your power"],
+    quotes: ["Your story is your power"],
   },
   {
-      title: "Software Engineer",
-      description: "Develops software applications.",
-      image: "https://example.com/software_engineer.jpg",
-      goals: [
-        "Build a successful app",
-        "Contribute to open-source projects",
-        "Work on innovative technology",
-      ],
-      quotes: ["code like you could be the next Steve Jobs"],
-    },
-    {
-      title: "Recruiter",
-    description: "Helps companies find the right talent.",
-    image: "https://example.com/recruiter.jpg",
+    title: "Software Engineer",
+    description: "Develops software applications.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/Software_engineer_icon.png",
     goals: [
-      "Match candidates with job opportunities",
-      "Build a strong professional network",
-      "Develop effective recruitment strategies",
+      "Build a successful app",
+      "Contribute to open-source projects",
+      "Work on innovative technology",
     ],
-    quotes: ["You are the bridge between talent and opportunity"],
+    quotes: ["Code like you could be the next Steve Jobs"],
   },
   {
     title: "Content Creator",
@@ -76,74 +58,88 @@ let careers =[
     ],
     quotes: ["Your creativity is your currency"],
   },
-  { 
-    title: "stay-at-home parent",
-    description: "Manages household and family responsibilities.",
-    image: "https://example.com/stay_at_home_parent.jpg",
-    goals: [
-      "Provide a nurturing environment for children",
-      "Balance household tasks and family time",
-      "Support children's education and development",
-    ],
-    quotes: ["To be a stay-at-home parent is to be a superhero in disguise"],
-  },
+  {
+  title: "Recruiter",
+  description: "Helps companies find the right talent.",
+  image: "https://example.com/recruiter.jpg",
+  goals: [
+    "Match candidates with job opportunities",
+    "Build a strong professional network",
+    "Develop effective recruitment strategies",
+  ],
+  quotes: ["You are the bridge between talent and opportunity"],
+},
+{
+  title: "Social Worker",
+  description: "Provides support and assistance to individuals in need.",
+  image: "https://example.com/social_worker.jpg",
+  goals: [
+    "Advocate for social justice",
+    "Support individuals and families",
+    "Create positive change in communities",
+  ],
+  quotes: ["Your compassion can change lives"],
+},
+{
+  title: "Stay-at-Home-Parent",
+  description: "Manages household and family responsibilities.",
+  image: "https://example.com/stay_at_home_parent.jpg",
+  goals: [
+    "Create a nurturing environment for children",
+    "Balance household tasks and family time",
+    "Support children's education and development",
+  ],
+  quotes: ["Your love is the foundation of your family"],
+}
+
 ];
 
-// This function adds cards the page to display the data in the array
 function showCards() {
   const cardContainer = document.getElementById("card-container");
-  cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  careers.forEach((careers) => { //this is a for loop that iterates through the careers array 
+  cardContainer.innerHTML = ""; // Clear old cards
 
-    const nextcard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextcard, careers); 
-    cardContainer.appendChild(nextcard); // Add new card to the container
+  careers.forEach((career) => {
+    const nextCard = templateCard.cloneNode(true);
+    editCardContent(nextCard, career);
+    nextCard.style.display = "block"; // Make visible
+    cardContainer.appendChild(nextCard);
   });
 }
 
-function editCardContent(card, career) { //this function edits the content of the card
-  card.style.display = "block";
-
+function editCardContent(card, career) {
   const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = careers.title;
+  cardHeader.textContent = career.title;
 
-  const cardImage = card.querySelector("img"); //this is a query selector that selects the img element
-  cardImage.src = careers.image;
-  cardImage.alt = newTitle + " Image";
+  const cardImage = card.querySelector("img");
+  cardImage.src = career.image;
+  cardImage.alt = career.title + " Image";
 
-  const u1= card.querySelector("u1"); //this is a query selector that selects the ul element
-  u1.innerHTML = ""; // Clear existing list items
+  const ul = card.querySelector("ul");
+  ul.innerHTML = "";
 
-  careers.goals.forEach((goal) => { //this is a forEach loop that iterates through the goals array
-    const li = document.createElement("li"); //this creates a new list item
-    li.textContent = goal; 
-    u1.appendChild(li); // adds the new list item to the ul
+  career.goals.forEach((goal) => {
+    const li = document.createElement("li");
+    li.textContent = goal;
+    ul.appendChild(li);
   });
-
 }
+
 function quoteAlert() {
-  const randomCareer = careers[Math.floor(Math.random() * careers.length)]; //this selects a random career from the careers array
-  const randomQuote =  randomCareer.quotes[Math.floor(Math.random() * quote.length)]; //this selects a random quote from the quotes array
-  
-  alert
-  "${randomQuote}//nCareer: ${randomCareer.title}\\nDescription: ${randomCareer.description}";
-  // Display the quote and career information in an alert
+  const randomCareer = careers[Math.floor(Math.random() * careers.length)];
+  const randomQuote = randomCareer.quotes[Math.floor(Math.random() * randomCareer.quotes.length)];
 
-  console.log("envision your future");
   alert(
-    "Random Quote: " +
-      randomQuote +
-      "\nCareer: " +
-      randomCareer.title +
-      "\nDescription: " +
-      randomCareer.description
+    "Quote: " + randomQuote +
+    "\nCareer: " + randomCareer.title +
+    "\nDescription: " + randomCareer.description
   );
-
-  function removeLastCard() {
-    careers.pop(); // Remove last item in titles array
-    showCards(); // Call showCards again to refres};
-  }
-document.addEventListener["DOMContentLoaded", showCards]
 }
+
+function removeLastCard() {
+  careers.pop();
+  showCards();
+}
+
+document.addEventListener("DOMContentLoaded", showCards);
