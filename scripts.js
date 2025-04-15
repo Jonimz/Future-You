@@ -94,7 +94,7 @@ let careers = [
   quotes: ["Your love is the foundation of your family"],
 },
 {
-  title: "Nurse,"
+  title: "Nurse",
   description: "Provides medical care and support to patients.",
   image: "https://example.com/nurse.jpg",
   goals: [
@@ -127,7 +127,6 @@ let careers = [
   quotes: ["Your knowledge can save lives"],
 },
 ];
-
 function showCards() {
   const cardContainer = document.getElementById("card-container");
   const templateCard = document.querySelector(".card");
@@ -174,6 +173,9 @@ function quoteAlert() {
 function removeLastCard() {
   careers.pop();
   showCards();
+  if (careers.length === 0) {
+    alert("No More Card to remove, learn more about other careers here https://zerotomastery.io/career-paths/ .");
+  }
 }
 function addNewCard() {
   const newCareer = {
