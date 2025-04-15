@@ -67,6 +67,8 @@ let careers = [
     "Build a strong professional network",
     "Develop effective recruitment strategies",
   ],
+  education: "Bachelor's degree in Human Resources or related field",
+  
   quotes: ["You are the bridge between talent and opportunity"],
 },
 {
@@ -90,8 +92,40 @@ let careers = [
     "Support children's education and development",
   ],
   quotes: ["Your love is the foundation of your family"],
-}
-
+},
+{
+  title: "Nurse,"
+  description: "Provides medical care and support to patients.",
+  image: "https://example.com/nurse.jpg",
+  goals: [
+    "Deliver compassionate patient care",
+    "Stay updated on medical advancements",
+    "Collaborate with healthcare teams",
+  ],
+  quotes: ["Not all heroes wear capes some wear scrubs"],
+},
+{
+  title: "Teacher",
+  description: "Educates and inspires students.",
+  image: "https://example.com/teacher.jpg",
+  goals: [
+    "Foster a love for learning",
+    "Create engaging lesson plans",
+    "Support students' academic growth",
+  ],
+  quotes: ["Teaching is the greatest act of optimism"],
+},
+{
+  title: "Doctor",
+  description: "Diagnoses and treats medical conditions.",
+  image: "https://example.com/doctor.jpg",
+  goals: [
+    "Provide quality healthcare",
+    "Stay updated on medical research",
+    "Build strong doctor-patient relationships",
+  ],
+  quotes: ["Your knowledge can save lives"],
+},
 ];
 
 function showCards() {
