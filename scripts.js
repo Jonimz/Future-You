@@ -59,81 +59,82 @@ let careers = [
     quotes: ["Your creativity is your currency"],
   },
   {
-  title: "Recruiter",
-  description: "Helps companies find the right talent.",
-  image: "https://example.com/recruiter.jpg",
-  goals: [
-    "Match candidates with job opportunities",
-    "Build a strong professional network",
-    "Develop effective recruitment strategies",
-  ],
-  education: "Bachelor's degree in Human Resources or related field",
-  
-  quotes: ["You are the bridge between talent and opportunity"],
-},
-{
-  title: "Social Worker",
-  description: "Provides support and assistance to individuals in need.",
-  image: "https://example.com/social_worker.jpg",
-  goals: [
-    "Advocate for social justice",
-    "Support individuals and families",
-    "Create positive change in communities",
-  ],
-  quotes: ["Your compassion can change lives"],
-},
-{
-  title: "Stay-at-Home-Parent",
-  description: "Manages household and family responsibilities.",
-  image: "https://example.com/stay_at_home_parent.jpg",
-  goals: [
-    "Create a nurturing environment for children",
-    "Balance household tasks and family time",
-    "Support children's education and development",
-  ],
-  quotes: ["Your love is the foundation of your family"],
-},
-{
-  title: "Nurse",
-  description: "Provides medical care and support to patients.",
-  image: "https://example.com/nurse.jpg",
-  goals: [
-    "Deliver compassionate patient care",
-    "Stay updated on medical advancements",
-    "Collaborate with healthcare teams",
-  ],
-  quotes: ["Not all heroes wear capes some wear scrubs"],
-},
-{
-  title: "Teacher",
-  description: "Educates and inspires students.",
-  image: "https://example.com/teacher.jpg",
-  goals: [
-    "Foster a love for learning",
-    "Create engaging lesson plans",
-    "Support students' academic growth",
-  ],
-  quotes: ["Teaching is the greatest act of optimism"],
-},
-{
-  title: "Doctor",
-  description: "Diagnoses and treats medical conditions.",
-  image: "https://example.com/doctor.jpg",
-  goals: [
-    "Provide quality healthcare",
-    "Stay updated on medical research",
-    "Build strong doctor-patient relationships",
-  ],
-  quotes: ["Your knowledge can save lives"],
-},
+    title: "Recruiter",
+    description: "Helps companies find the right talent.",
+    image: "https://example.com/recruiter.jpg",
+    goals: [
+      "Match candidates with job opportunities",
+      "Build a strong professional network",
+      "Develop effective recruitment strategies",
+    ],
+    education: "Bachelor's degree in Human Resources or related field",
+    quotes: ["You are the bridge between talent and opportunity"],
+  },
+  {
+    title: "Social Worker",
+    description: "Provides support and assistance to individuals in need.",
+    image: "https://example.com/social_worker.jpg",
+    goals: [
+      "Advocate for social justice",
+      "Support individuals and families",
+      "Create positive change in communities",
+    ],
+    quotes: ["Your compassion can change lives"],
+  },
+  {
+    title: "Stay-at-Home-Parent",
+    description: "Manages household and family responsibilities.",
+    image: "https://example.com/stay_at_home_parent.jpg",
+    goals: [
+      "Create a nurturing environment for children",
+      "Balance household tasks and family time",
+      "Support children's education and development",
+    ],
+    quotes: ["Your love is the foundation of your family"],
+  },
+  {
+    title: "Nurse",
+    description: "Provides medical care and support to patients.",
+    image: "https://example.com/nurse.jpg",
+    goals: [
+      "Deliver compassionate patient care",
+      "Stay updated on medical advancements",
+      "Collaborate with healthcare teams",
+    ],
+    quotes: ["Not all heroes wear capes some wear scrubs"],
+  },
+  {
+    title: "Teacher",
+    description: "Educates and inspires students.",
+    image: "https://example.com/teacher.jpg",
+    goals: [
+      "Foster a love for learning",
+      "Create engaging lesson plans",
+      "Support students' academic growth",
+    ],
+    quotes: ["Teaching is the greatest act of optimism"],
+  },
+  {
+    title: "Doctor",
+    description: "Diagnoses and treats medical conditions.",
+    image: "https://example.com/doctor.jpg",
+    goals: [
+      "Provide quality healthcare",
+      "Stay updated on medical research",
+      "Build strong doctor-patient relationships",
+    ],
+    quotes: ["Your knowledge can save lives"],
+  },
 ];
-function showCards() {
+
+// This funtion is used to show the cards on the page
+function showCards(filteredCareers = careers) {
   const cardContainer = document.getElementById("card-container");
   const templateCard = document.querySelector(".card");
 
   cardContainer.innerHTML = ""; // Clear old cards
 
-  careers.forEach((career) => {
+  filteredCareers.forEach((career) => {
     const nextCard = templateCard.cloneNode(true);
     editCardContent(nextCard, career);
     nextCard.style.display = "block"; // Make visible
@@ -141,52 +142,29 @@ function showCards() {
   });
 }
 
+// This funtion Edit content of the card based on career data
 function editCardContent(card, career) {
-  const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = career.title;
+  card.querySelector(".card-title").textContent = career.title;
+  card.querySelector(".card-description").textContent = career.description;
+  card.querySelector(".card-image").src = career.image;
+  card.querySelector(".card-goals").innerHTML = career.goals
+    .map((goal) => `<li>${goal}</li>`)
+    .join("");
+  card.querySelector(".card-quotes").textContent = career.quotes.join(" ");
+}
+// This function is used to filter the cards based on the search input
+document.addEventListener("DOMContentLoaded", () => {
+  showCards(); // Show all careers initially
 
-  const cardImage = card.querySelector("img");
-  cardImage.src = career.image;
-  cardImage.alt = career.title + " Image";
+  const searchInput = document.getElementById("search-input");
 
-  const ul = card.querySelector("ul");
-  ul.innerHTML = "";
+  searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value.toLowerCase();
 
-  career.goals.forEach((goal) => {
-    const li = document.createElement("li");
-    li.textContent = goal;
-    ul.appendChild(li);
+    const filtered = careers.filter((career) =>
+      career.title.toLowerCase().includes(searchTerm)
+    );
+
+    showCards(filtered);
   });
-}
-
-function quoteAlert() {
-  const randomCareer = careers[Math.floor(Math.random() * careers.length)];
-  const randomQuote = randomCareer.quotes[Math.floor(Math.random() * randomCareer.quotes.length)];
-
-  alert(
-    "Quote: " + randomQuote +
-    "\nCareer: " + randomCareer.title +
-    "\nDescription: " + randomCareer.description
-  );
-}
-
-function removeLastCard() {
-  careers.pop();
-  showCards();
-  if (careers.length === 0) {
-    alert("No More Card to remove, learn more about other careers here https://zerotomastery.io/career-paths/ .");
-  }
-}
-function addNewCard() {
-  const newCareer = {
-    title: "New Career",
-    description: "Description of the new career.",
-    image: "https://example.com/new_career.jpg",
-    goals: ["Goal 1", "Goal 2", "Goal 3"],
-    quotes: ["Quote 1", "Quote 2"],
-  };
-  careers.push(newCareer);
-  showCards();
-}
-
-document.addEventListener("DOMContentLoaded", showCards);
+});
