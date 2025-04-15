@@ -28,7 +28,7 @@ let careers = [
   {
     title: "Author",
     description: "Writes books and articles.",
-    image: "https://a.co/d/fEZv9pY",
+    image: "https://www.amazon.com/THESE-MOMENTS-Joyce-Jeleh-Nimely/dp/B0D4MN9MTD",
     goals: [
       "Write a bestselling novel",
       "Publish articles in top magazines",
