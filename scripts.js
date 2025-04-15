@@ -156,7 +156,7 @@ function editCardContent(card, career) {
 document.addEventListener("DOMContentLoaded", () => {
   showCards(); // Show all careers initially
 
-  const searchInput = document.getElementById("search-input");
+  const searchInput = document.getElementById("search-input");  Se
 
   searchInput.addEventListener("input", () => {
     const searchTerm = searchInput.value.toLowerCase();
