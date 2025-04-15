@@ -23,15 +23,15 @@
  *
  */
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
+// const FRESH_PRINCE_URL =
+//   "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
+// const CURB_POSTER_URL =
+//   "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
+// const EAST_LOS_HIGH_POSTER_URL =
+//   "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
-// This is an array of strings (TV show titles)
-let careers = [
+// This is an array of strings (career titles)
+let careers =[
   {
     title: "Author",
     description: "Writes books and articles.",
@@ -41,9 +41,9 @@ let careers = [
       "Publish articles in top magazines",
       "Attend book signings and events",
     ],
-    quotes: [
-      "your story is your power",
-    {
+    quotes: ["your story is your power"],
+  },
+  {
       title: "Software Engineer",
       description: "Develops software applications.",
       image: "https://example.com/software_engineer.jpg",
@@ -52,10 +52,9 @@ let careers = [
         "Contribute to open-source projects",
         "Work on innovative technology",
       ],
-      quotes: [
-        "Imagine you at silicon valley",
-        "code like you could be the next Steve Jobs",
-      {
+      quotes: ["code like you could be the next Steve Jobs"],
+    },
+    {
       title: "Recruiter",
     description: "Helps companies find the right talent.",
     image: "https://example.com/recruiter.jpg",
@@ -75,11 +74,7 @@ let careers = [
       "Collaborate with brands",
       "Produce high-quality content",
     ],
-    quotes: [
-      "Your creativity is your currency",
-      "Create content that resonates with your audience",
-    ],
-
+    quotes: ["Your creativity is your currency"],
   },
   { 
     title: "stay-at-home parent",
@@ -90,13 +85,9 @@ let careers = [
       "Balance household tasks and family time",
       "Support children's education and development",
     ],
-    quotes: [
-      "To be a stay-at-home parent is to be a superhero in disguise",
-    ],
-  }
-
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
+    quotes: ["To be a stay-at-home parent is to be a superhero in disguise"],
+  },
+];
 
 // This function adds cards the page to display the data in the array
 function showCards() {
@@ -104,53 +95,55 @@ function showCards() {
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
+  careers.forEach((careers) => { //this is a for loop that iterates through the careers array 
 
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
-    }
-
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
-  }
+    const nextcard = templateCard.cloneNode(true); // Copy the template card
+    editCardContent(nextcard, careers); 
+    cardContainer.appendChild(nextcard); // Add new card to the container
+  });
 }
 
-function editCardContent(card, newTitle, newImageURL) {
+function editCardContent(card, career) { //this function edits the content of the card
   card.style.display = "block";
 
   const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
+  cardHeader.textContent = careers.title;
 
-  const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
+  const cardImage = card.querySelector("img"); //this is a query selector that selects the img element
+  cardImage.src = careers.image;
+  cardImage.alt = newTitle + " Image";
 
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
+  const u1= card.querySelector("u1"); //this is a query selector that selects the ul element
+  u1.innerHTML = ""; // Clear existing list items
+
+  careers.goals.forEach((goal) => { //this is a forEach loop that iterates through the goals array
+    const li = document.createElement("li"); //this creates a new list item
+    li.textContent = goal; 
+    u1.appendChild(li); // adds the new list item to the ul
+  });
+
 }
-
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
-
 function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!"
-  );
-}
+  const randomCareer = careers[Math.floor(Math.random() * careers.length)]; //this selects a random career from the careers array
+  const randomQuote =  randomCareer.quotes[Math.floor(Math.random() * quote.length)]; //this selects a random quote from the quotes array
+  
+  alert
+  "${randomQuote}//nCareer: ${randomCareer.title}\\nDescription: ${randomCareer.description}";
+  // Display the quote and career information in an alert
 
-function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
+  console.log("envision your future");
+  alert(
+    "Random Quote: " +
+      randomQuote +
+      "\nCareer: " +
+      randomCareer.title +
+      "\nDescription: " +
+      randomCareer.description
+  );
+
+  function removeLastCard() {
+    careers.pop(); // Remove last item in titles array
+    showCards(); // Call showCards again to refres};
+  }
+document.addEventListener["DOMContentLoaded", showCards]
 }
