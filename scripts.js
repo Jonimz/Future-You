@@ -28,7 +28,7 @@ let careers = [
   {
     title: "Author",
     description: "Writes books and articles.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Author_pencil.svg",
+    image: "https://a.co/d/fEZv9pY",
     goals: [
       "Write a bestselling novel",
       "Publish articles in top magazines",
@@ -139,6 +139,17 @@ function quoteAlert() {
 
 function removeLastCard() {
   careers.pop();
+  showCards();
+}
+function addNewCard() {
+  const newCareer = {
+    title: "New Career",
+    description: "Description of the new career.",
+    image: "https://example.com/new_career.jpg",
+    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    quotes: ["Quote 1", "Quote 2"],
+  };
+  careers.push(newCareer);
   showCards();
 }
 
