@@ -39,7 +39,7 @@ const careers = [
   {
     title: "Software Engineer",
     description: "Develops software applications.",
-    image: "https://pixabay.com/photos/software-developer-web-developer-6521720/_.jpg",
+    image: "https://i.pinimg.com/736x/c9/7b/a9/c97ba98b802694a97a548160c9e324ef.jpg",
     goals: [
       "Build a successful app",
       "Work on innovative technology",
@@ -49,7 +49,7 @@ const careers = [
   {
     title: "Content Creator",
     description: "Creates engaging content for various platforms.",
-    image: "https://example.com/content_creator.jpg",
+    image: "img/IMG_1792.jpg",
     goals: [
       "Grow a loyal audience",
       "Produce high-quality content",
@@ -57,27 +57,6 @@ const careers = [
     quotes: ["Your creativity is your currency"],
   },
   {
-    title: "Recruiter",
-    description: "Helps companies find the right talent.",
-    image: "https://example.com/recruiter.jpg",
-    goals: [
-      "Match candidates with job opportunities",
-      "Develop effective recruitment strategies",
-    ],
-    quotes: ["You are the bridge between talent and opportunity"],
-  },
-  {
-    title: "Social Worker",
-    description: "Provides support and assistance to individuals in need.",
-    image: "https://kentucky.kvc.org/wp-content/uploads/sites/4/2022/04/iStock-1255910636-1038x576.jpg",
-    goals: [
-      "Advocate for social justice",
-      "Create positive change in communities",
-    ],
-    quotes: ["Your compassion can change lives"],
-  },
-  {
-   
     title: "Nurse",
     description: "Provides medical care and support to patients.",
     image: "img/nurse.jpg",
@@ -90,7 +69,7 @@ const careers = [
   {
     title: "Teacher",
     description: "Educates and inspires students.",
-    image: "https://example.com/teacher.jpg",
+    image: "https://i.pinimg.com/736x/11/35/4f/11354f25567e8b47e3e2b990ac11228c.jpg",
     goals: [
       "Foster a love for learning",
       "Support students' academic growth",
