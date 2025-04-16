@@ -39,7 +39,7 @@ const careers = [
   {
     title: "Software Engineer",
     description: "Develops software applications.",
-    image: "https://pixabay.com/photos/software-developer-web-developer-6521720/.jpg",
+    image: "https://pixabay.com/photos/software-developer-web-developer-6521720/_.jpg",
     goals: [
       "Build a successful app",
       "Work on innovative technology",
@@ -80,7 +80,7 @@ const careers = [
    
     title: "Nurse",
     description: "Provides medical care and support to patients.",
-    image: "https://www.vectorstock.com/royalty-free-vector/nurse-cartoon-colored-clipart-vector-46693878.jpg",
+    image: "img/nurse.jpg",
     goals: [
       "Deliver compassionate patient care",
       "Stay updated on medical advancements",
