@@ -25,7 +25,7 @@
 
 // This is an array of strings (career titles)
 
-let careers = [
+const careers = [
   {
     title: "Author",
     description: "Writes books and articles.",
@@ -77,16 +77,7 @@ let careers = [
     quotes: ["Your compassion can change lives"],
   },
   {
-    title: "Stay-at-Home-Parent",
-    description: "Manages household and family responsibilities.",
-    image: "https://example.com/stay_at_home_parent.jpg",
-    goals: [
-      "Create a nurturing environment for children",
-      "Balance household tasks and family time",
-    ],
-    quotes: ["Your love is the foundation of your family"],
-  },
-  {
+   
     title: "Nurse",
     description: "Provides medical care and support to patients.",
     image: "https://example.com/nurse.jpg",
@@ -106,24 +97,14 @@ let careers = [
     ],
     quotes: ["Teaching is the greatest act of optimism"],
   },
-  {
-    title: "Doctor",
-    description: "Diagnoses and treats medical conditions.",
-    image: "https://example.com/doctor.jpg",
-    goals: [
-      "Provide quality healthcare",
-      "Build strong doctor-patient relationships",
-    ],
-    quotes: ["Your knowledge can save lives"],
-  },
+
 ];
 
 // This funtion is used to show the cards on the page
 function showCards(filteredCareers = careers) {
-  const cardContainer = document.getElementById("card-container");
-  const templateCard = document.querySelector(".card");
-
-  cardContainer.innerHTML = ""; // Clear old cards
+  const container = document.getElementById("card-container");
+  const template = document.querySelector(".card");
+  container.innerHTML = ""; // Clear old cards
 
   filteredCareers.forEach((career) => {
     const nextCard = templateCard.cloneNode(true);
