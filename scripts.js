@@ -39,7 +39,7 @@ const careers = [
   {
     title: "Software Engineer",
     description: "Develops software applications.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/Software_engineer_icon.png",
+    image: "https://pixabay.com/photos/software-developer-web-developer-6521720/.jpg",
     goals: [
       "Build a successful app",
       "Work on innovative technology",
