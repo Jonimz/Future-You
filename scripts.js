@@ -69,7 +69,7 @@ const careers = [
   {
     title: "Social Worker",
     description: "Provides support and assistance to individuals in need.",
-    image: "https://example.com/social_worker.jpg",
+    image: "https://kentucky.kvc.org/wp-content/uploads/sites/4/2022/04/iStock-1255910636-1038x576.jpg",
     goals: [
       "Advocate for social justice",
       "Create positive change in communities",
