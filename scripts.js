@@ -110,6 +110,10 @@ function showCards(filteredCareers = careers) {
     const nextCard = template.cloneNode(true);
     editCardContent(nextCard, career);
     nextCard.style.display = "block"; // Make visible
+
+    nextCard.addEventListener("click", () => {
+      alert(career.quotes.join(" "));
+    });
     container.appendChild(nextCard);
   });
 }
