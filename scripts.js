@@ -24,6 +24,7 @@
  */
 
 // This is an array of strings (career titles)
+
 let careers = [
   {
     title: "Author",
@@ -32,7 +33,6 @@ let careers = [
     goals: [
       "Write a bestselling novel",
       "Publish articles in top magazines",
-      "Attend book signings and events",
     ],
     quotes: ["Your story is your power"],
   },
@@ -42,7 +42,6 @@ let careers = [
     image: "https://upload.wikimedia.org/wikipedia/commons/5/59/Software_engineer_icon.png",
     goals: [
       "Build a successful app",
-      "Contribute to open-source projects",
       "Work on innovative technology",
     ],
     quotes: ["Code like you could be the next Steve Jobs"],
@@ -53,7 +52,6 @@ let careers = [
     image: "https://example.com/content_creator.jpg",
     goals: [
       "Grow a loyal audience",
-      "Collaborate with brands",
       "Produce high-quality content",
     ],
     quotes: ["Your creativity is your currency"],
@@ -64,10 +62,8 @@ let careers = [
     image: "https://example.com/recruiter.jpg",
     goals: [
       "Match candidates with job opportunities",
-      "Build a strong professional network",
       "Develop effective recruitment strategies",
     ],
-    education: "Bachelor's degree in Human Resources or related field",
     quotes: ["You are the bridge between talent and opportunity"],
   },
   {
@@ -76,7 +72,6 @@ let careers = [
     image: "https://example.com/social_worker.jpg",
     goals: [
       "Advocate for social justice",
-      "Support individuals and families",
       "Create positive change in communities",
     ],
     quotes: ["Your compassion can change lives"],
@@ -88,7 +83,6 @@ let careers = [
     goals: [
       "Create a nurturing environment for children",
       "Balance household tasks and family time",
-      "Support children's education and development",
     ],
     quotes: ["Your love is the foundation of your family"],
   },
@@ -99,7 +93,6 @@ let careers = [
     goals: [
       "Deliver compassionate patient care",
       "Stay updated on medical advancements",
-      "Collaborate with healthcare teams",
     ],
     quotes: ["Not all heroes wear capes some wear scrubs"],
   },
@@ -109,7 +102,6 @@ let careers = [
     image: "https://example.com/teacher.jpg",
     goals: [
       "Foster a love for learning",
-      "Create engaging lesson plans",
       "Support students' academic growth",
     ],
     quotes: ["Teaching is the greatest act of optimism"],
@@ -120,7 +112,6 @@ let careers = [
     image: "https://example.com/doctor.jpg",
     goals: [
       "Provide quality healthcare",
-      "Stay updated on medical research",
       "Build strong doctor-patient relationships",
     ],
     quotes: ["Your knowledge can save lives"],
@@ -144,13 +135,13 @@ function showCards(filteredCareers = careers) {
 
 // This funtion Edit content of the card based on career data
 function editCardContent(card, career) {
-  card.querySelector(".card-title").textContent = career.title;
-  card.querySelector(".card-description").textContent = career.description;
-  card.querySelector(".card-image").src = career.image;
-  card.querySelector(".card-goals").innerHTML = career.goals
+  card.queryselector(".card-title").textContent = career.title;
+  card.queryselector(".card-description").textContent = career.description;
+  card.queryselector(".card-image").src = career.image;
+  card.queryselector(".card-goals").innerHTML = career.goals
     .map((goal) => `<li>${goal}</li>`)
     .join("");
-  card.querySelector(".card-quotes").textContent = career.quotes.join(" ");
+  card.queryselector(".card-quotes").textcontent = career.quotes.join(" ");
 }
 // This function is used to filter the cards based on the search input
 document.addEventListener("DOMContentLoaded", () => {
