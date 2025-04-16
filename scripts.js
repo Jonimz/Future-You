@@ -135,19 +135,19 @@ function showCards(filteredCareers = careers) {
 
 // This funtion Edit content of the card based on career data
 function editCardContent(card, career) {
-  card.queryselector(".card-title").textContent = career.title;
-  card.queryselector(".card-description").textContent = career.description;
-  card.queryselector(".card-image").src = career.image;
-  card.queryselector(".card-goals").innerHTML = career.goals
+  card.querySelector(".card-title").textContent = career.title;
+  card.querySelector(".card-description").textContent = career.description;
+  card.querySelector(".card-image").src = career.image;
+  card.querySelector(".card-goals").innerHTML = career.goals
     .map((goal) => `<li>${goal}</li>`)
     .join("");
-  card.queryselector(".card-quotes").textcontent = career.quotes.join(" ");
+  card.querySelector(".card-quotes").textContent = career.quotes.join(" ");
 }
 // This function is used to filter the cards based on the search input
 document.addEventListener("DOMContentLoaded", () => {
   showCards(); // Show all careers initially
 
-  const searchInput = document.getElementById("search-input");  Se
+  const searchInput = document.getElementById("search-input");
 
   searchInput.addEventListener("input", () => {
     const searchTerm = searchInput.value.toLowerCase();
