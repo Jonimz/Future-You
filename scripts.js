@@ -102,9 +102,9 @@ const careers = [
 
 // This funtion is used to show the cards on the page
 function showCards(filteredCareers = careers) {
-  const container = document.getElementById("card-container");
-  const template = document.querySelector(".card");
-  container.innerHTML = ""; // Clear old cards
+  const cardContainer = document.getElementById("card-container");
+  const cardTemplate = document.querySelector(".card");
+  cardContainer.innerHTML = ""; // Clear old cards
 
   filteredCareers.forEach((career) => {
     const nextCard = templateCard.cloneNode(true);
@@ -120,10 +120,10 @@ function editCardContent(card, career) {
   card.querySelector(".card-description").textContent = career.description;
   card.querySelector(".card-image").src = career.image;
   card.querySelector(".card-goals").innerHTML = career.goals
-    .map((goal) => `<li>${goal}</li>`)
-    .join("");
-  card.querySelector(".card-quotes").textContent = career.quotes.join(" ");
-}
+  .map((goal) => `<li>${goal}</li>`)
+  .join("");
+  card.querySelector(".card-quote").textcontent = career.quotes.join(" ");
+ }
 // This function is used to filter the cards based on the search input
 document.addEventListener("DOMContentLoaded", () => {
   showCards(); // Show all careers initially
