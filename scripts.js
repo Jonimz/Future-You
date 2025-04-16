@@ -93,7 +93,15 @@ const careers = [
 function showCards(filteredCareers = careers) {
   const container = document.getElementById("card-container");
   const template = document.querySelector(".card");
+  const noResults = document.getElementById("no-results");
   container.innerHTML = ""; // Clear old cards
+
+  if (filteredCareers.length === 0) {
+    noResults.style.display = "block";
+  } else {
+    noResults.style.display = "none";
+  }
+
 
   filteredCareers.forEach((career) => {
     const nextCard = template.cloneNode(true);
@@ -119,7 +127,7 @@ function editCardContent(card, career) {
  }
 
  function searchCareer() {
-  const searchTerm = document.getElementById("search-input").value.toLowerCase();
+  const searchInput= document.getElementById("search-input").value.toLowerCase();
   const filtered = careers.filter((career) =>
     career.title.toLowerCase().includes(searchInput)
   );
