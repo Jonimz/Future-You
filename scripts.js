@@ -76,6 +76,16 @@ const careers = [
     ],
     quotes: ["Teaching is the greatest act of optimism"],
   },
+  {
+    title: "Recruiter",
+    description: "Connects job seekers with employers.",
+    image: "https://i.pinimg.com/736x/ea/c8/31/eac83105eb521f004de7c4900f4ef7de.jpg",
+    goals: [
+      "Match candidates with the right jobs",
+      "Build strong relationships with clients",
+    ],
+    quotes: ["Your network is your networth"],
+  },
 
 ];
 
