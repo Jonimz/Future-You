@@ -29,7 +29,7 @@ const careers = [
   {
     title: "Author",
     description: "Writes books and articles.",
-    image: "https://www.amazon.com/THESE-MOMENTS-Joyce-Jeleh-Nimely/dp/B0D4MN9MTD",
+    image: "https://m.media-amazon.com/images/I/51D6fgwoWRL._SL1500_.jpg",
     goals: [
       "Write a bestselling novel",
       "Publish articles in top magazines",
