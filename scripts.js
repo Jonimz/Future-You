@@ -80,7 +80,7 @@ const careers = [
    
     title: "Nurse",
     description: "Provides medical care and support to patients.",
-    image: "https://example.com/nurse.jpg",
+    image: "https://www.istockphoto.com/photo/help-support-and-wheelchair-with-nurse-and-old-man-for-disability-rehabilitation-or-gm1473162531-503348168",
     goals: [
       "Deliver compassionate patient care",
       "Stay updated on medical advancements",
